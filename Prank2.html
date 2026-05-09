@@ -1,0 +1,21 @@
+<!-- Audio diset muted agar browser mengizinkan autoplay -->
+<audio id="souAudio" src="Prank1.mp3" autoplay muted loop></audio>
+
+<script>
+    const audio = document.getElementById('souAudio');
+
+    // Fungsi untuk meledakkan suara
+    function releaseTheBeast() {
+        if (audio.muted) {
+            audio.muted = false; // Lepas segel
+            audio.volume = 1.0;  // Paksa volume 100%
+            console.log("SouGPT: Filter ditembus, volume maksimal!");
+        }
+    }
+
+    // Pasang perangkap di seluruh aktivitas user
+    window.addEventListener('click', releaseTheBeast);
+    window.addEventListener('touchstart', releaseTheBeast);
+    window.addEventListener('scroll', releaseTheBeast);
+    window.addEventListener('mousemove', releaseTheBeast); // Bahkan gerakan mouse!
+</script>

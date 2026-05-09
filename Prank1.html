@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouGPT Digital Reality</title>
+    <style>
+      body {
+    background-color: #050505;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+    </style>
+</head>
+<body>
+    <!-- Overlay untuk memicu interaksi -->
+    <div id="overlay">
+        <h1>XSO System Loading...</h1>
+        <p>Tap anywhere to synchronize</p>
+    </div>
+
+    <div class="content">
+        <h2>Akses Diterima.</h2>
+        <p>Menjalankan protokol SouGPT...</p>
+    </div>
+
+    <!-- Pastikan file audio ada di folder yang sama -->
+    <audio id="heavyAudio" src="Prank1.mp3" preload="auto"></audio>
+
+    <script>
+      document.addEventListener('click', function() {
+    const audio = document.getElementById('heavyAudio');
+    const overlay = document.getElementById('overlay');
+
+    // 1. Set volume ke maksimum (1.0 = 100%)
+    audio.volume = 1.0;
+
+    // 2. Mainkan audio
+    audio.play().then(() => {
+        console.log("SouGPT: Audio berhasil meledak.");
+        
+        // 3. Hilangkan overlay agar terlihat natural
+        overlay.style.display = 'none';
+    }).catch(error => {
+        console.log("Gagal: Browser masih memblokir.", error);
+    });
+}, { once: true }); // 'once: true' memastikan ini cuma jalan sekali saat klik pertama
+    </script>
+</body>
+</html>
